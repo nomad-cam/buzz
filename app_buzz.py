@@ -24,7 +24,26 @@ class Buzz(object):
         cherrypy.log.error(BASE_DIR)
         t = jinja_env.get_template('index.html')
         return t.render(name = "Camerons")
-        #return "Hello Worlds!"
+    
+    @cherrypy.expose
+    def config(self):
+        t = jinja_env.get_template('config.html')
+        return t.render(name = "Camerons")
+
+    @cherrypy.expose
+    def hives(self):
+        t = jinja_env.get_template('hives.html')
+        return t.render(name = "Camerons")
+
+    @cherrypy.expose
+    def observe(self):
+        t = jinja_env.get_template('observe.html')
+        return t.render(name = "Camerons")
+
+    @cherrypy.expose
+    def location(self):
+        t = jinja_env.get_template('location.html')
+        return t.render(name = "Camerons")
 
 cherrypy.config.update({
     'server.socket_host': '127.0.0.1',
