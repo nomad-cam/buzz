@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Buzz</title>
+
+    <link rel="stylesheet" href="/styles/buzz-light.css" />
+    <link rel="stylesheet" href="/styles/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="/styles/jquery.mobile.structure-1.4.3.min.css" />
+    <link rel="stylesheet" href="/styles/jquery.mobile-1.4.3.css" />
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery.mobile-1.4.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).on("pagebeforeshow", function( event, data ) {
+            $('#nav-panel').panel("open");
+        })
+    </script>
+</head>
+
+<body>
+    <div data-role="page" data-theme="c" class="ui-responsive-panel">
+        <div data-role="header">
+            <h1>Buzz</h1>
+            <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+            <a href="../" data-icon="gear" data-iconpos="notext">Home</a>
+        </div><!-- /header -->
+        
+        <div data-role="content">
+            <p>Main content goes here</p>
+        </div><!-- content -->
+
+        <div data-role="footer"><h4>Buzz by Cameron Rodda 2014</h4>
+        </div><!-- /footer -->
+
+        <div data-role="panel" data-position-fixed="true" data-display="push" data-dismissible="false" data-animate="false" id="nav-panel" data-theme="b">
+            <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                <li><a href='observe.html'>Observations</a></li>
+                <li><a href='hives.html'>Hives</a></li>
+                <li><a href='location.html'>Location</a></li>
+            </ul>            
+        </div><!-- content panel -->
+
+    </div><!-- /page -->
+</body>
+</html>
