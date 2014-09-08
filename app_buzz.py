@@ -7,6 +7,7 @@ __date__   = 'Sept 2014'
 import os
 import cherrypy
 import jinja2
+import sqlite3 as lite
 from datetime import date
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -14,8 +15,16 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates/').replace('\\','/') #to fix win
 STYLES_DIR = os.path.join(BASE_DIR,'styles/').replace('\\','/')
 JS_DIR = os.path.join(BASE_DIR,'js/').replace('\\','/')
 IMG_DIR = os.path.join(BASE_DIR,'images/').replace('\\','/')
+DB_DIR = os.path.join(BASE_DIR,'db/').replace('\\','/')
 
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(TEMPLATE_DIR), autoescape=True)
+
+try:
+    pass
+except lite.Error, e:
+    cherrypy.log.error(e)
+    raise e
+
 
 class Buzz(object):
 
@@ -37,8 +46,16 @@ class Buzz(object):
 
     @cherrypy.expose
     def observe(self):
+        db = lite.connect("%sBuzzLight.db" % DB_DIR)
+        cur = db.cursor()
+        cur.execute("SELECT * FROM beelog")
+        data = cur.fetchall()
+        db.close()
+
+        #cherrypy.log.error(type(data).string)
+
         t = jinja_env.get_template('observe.html')
-        return t.render(name = "Camerons")
+        return t.render(entries=data)
 
     @cherrypy.expose
     def location(self):
@@ -79,4 +96,6 @@ config = {
 }
 
 cherrypy.tree.mount(Buzz(),'/',config=config)
+cherrypy.engine.autoreload.on = True
+cherrypy.engine.autoreload.files.add('app_buzz.py')
 cherrypy.engine.start()

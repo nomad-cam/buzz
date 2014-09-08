@@ -11,6 +11,36 @@
 {% endblock %}
         
 {% block content %}
-<p>Observations about your hives go here...</p>
+<div data-role="collapsible">
+    <h3>Add New Entry</h3>
+    <p>Name:</p>
+    <p>Date:</p>
+    <p>Hive:</p>
+    <p>Notes:</p>
+    <p>Weather:</p>
+</div>
+
+{% for report in entries -%}
+{% if loop.first %}
+<div>Last Observations
+<div data-role="collapsible" data-collapsed="false" data-collapsed-icon="calendar" data-expanded-icon="calendar">
+    <h3><div>{{ report[1] }}</div><div style="float:right; margin-top:-22px;">{{ report[0] }}</div></h3>
+    <p>Hives: {{ report[2] }}</p>
+    <p>Notes: {{ report[3] }}</p>
+    <p>Weather: {{ report[4] }}</p>
+</div>
+</div>
+<div>Older Observations
+{% else %}
+<div data-role="collapsible" data-collapsed-icon="calendar" data-expanded-icon="calendar">
+    <h3><div>{{ report[1] }}</div><div style="float:right; margin-top:-22px;">{{ report[0] }}</div></h3>
+    <p>Hives: {{ report[2] }}</p>
+    <p>Notes: {{ report[3] }}</p>
+    <p>Weather: {{ report[4] }} </p>
+</div>
+
+{% endif %}
+{% endfor -%}
+</div>
 {% endblock %}
 
