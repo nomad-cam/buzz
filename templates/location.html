@@ -2,34 +2,84 @@
 
 {% block head %}
 <title>Buzz - Location</title>
+<link rel="stylesheet" type="text/css" href="/styles/leaflet.css">
 
-<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-  <script>
-    map = new OpenLayers.Map("mapdiv");
-    map.addLayer(new OpenLayers.Layer.OSM());
-    map.zoomToMaxExtent();
-    //Set start centrepoint and zoom    
-    //var lonLat = new OpenLayers.LonLat( 9.5788, 48.9773 )
-    //      .transform(
-    //        new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-    //        map.getProjectionObject() // to Spherical Mercator Projection
-    //      );
-    //var zoom=11;
-    //map.setCenter (lonLat, zoom);  
-
- 
-  </script>
 {% endblock %}
 
 {% block header %}
-<h1>Your Location</h1>
+<h1>Your Locations</h1>
 <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 <a href="config" data-icon="gear" data-iconpos="notext">Configure</a>
 {% endblock %}
         
 {% block content %}
-<p>Information about your hive locations...</p>
-<div id="mapdiv" style="height:250px"></div>
-  
+<div data-role="collapsible">
+    <h3>Add Location</h3>
+    <form action="/location" method="post">
+        <div data-role="fieldcontain">
+            <input type="submit" data-inline="true" value="Add Location" name="add_location">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="latt">Latt:</label>
+            <input type="text" data-inline="true" name='latt' id='latt' value="" data-clear-btn="true">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="long">Long:</label>
+            <input type="text" data-inline="true" name='long' id='long' value="" data-clear-btn="true">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="long">Hive:</label>
+            <input type="text" data-inline="true" name='hive' id='hive' value="" data-clear-btn="true">        
+        </div>
+    </form>
+</div>
+
+<div id="map" style="height:400px;color:#000;"></div>
+
+<script src="/js/leaflet.js"></script>
+    <script>
+        {% if locations %}
+        var toBound = [];        
+
+        {% for locate in locations %}
+        var latlng = L.latLng({{ locate[0] }},{{ locate[1] }});
+        toBound.push(latlng);
+
+        {% endfor %}
+
+        var bounds = new L.LatLngBounds(toBound)
+        var map = L.map('map').fitBounds(bounds);
+
+        {% for locate in locations %}
+        var marker = L.marker([{{ locate[0] }}, {{ locate[1] }}],
+            {
+                title: 'Hive {{ locate[2] }}'
+            }).addTo(map);
+        {% endfor %}
+
+        {% else %}
+
+        var map = L.map('map').setView([-37.8165, 144.9637],13); //center on Melbourne if no Markers
+
+        {% endif %}
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(map);
+        }
+
+        map.on('click', onMapClick);
+
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 18
+        }).addTo(map);
+ 
+    </script>
+
 {% endblock %}
 
