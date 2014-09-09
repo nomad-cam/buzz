@@ -13,13 +13,34 @@
 {% block content %}
 <div data-role="collapsible">
     <h3>Add New Entry</h3>
-    <p>Name:</p>
-    <p>Date:</p>
-    <p>Hive:</p>
-    <p>Notes:</p>
-    <p>Weather:</p>
+    <form action="/observe" method="post">
+        <div data-role="fieldcontain">
+            <label for="name">Name:</label>
+            <input type="text" data-inline="true" name='name' id='name' value="" data-clear-btn="true">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="date">Date:</label>
+            <input type="text" data-inline="true" name='date' id='date' value="{{ now }}" data-clear-btn="true">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="hive">Hive:</label>
+            <input type="text" data-inline="true" name='hive' id='hive' value="" data-clear-btn="true">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="notes">Notes:</label>
+            <textarea cols="40" rows="8" name='notes' id='notes' data-clear-btn="true"></textarea>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="weather">Weather:</label>
+            <input type="text" data-inline="true" name='weather' id='weather' value="">
+        </div>
+        <div data-role="fieldcontain">
+            <input type="submit" data-inline="true" value="Add Entry" name="add_entry">
+        </div>
+    </form>
 </div>
 
+{% if entries %}
 {% for report in entries -%}
 {% if loop.first %}
 <div>Last Observations
@@ -42,5 +63,6 @@
 {% endif %}
 {% endfor -%}
 </div>
+{% endif %}
 {% endblock %}
 

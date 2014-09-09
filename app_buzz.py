@@ -8,14 +8,15 @@ import os
 import cherrypy
 import jinja2
 import sqlite3 as lite
-from datetime import date
+import datetime
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-TEMPLATE_DIR = os.path.join(BASE_DIR,'templates/').replace('\\','/') #to fix windows errors with os.path
-STYLES_DIR = os.path.join(BASE_DIR,'styles/').replace('\\','/')
-JS_DIR = os.path.join(BASE_DIR,'js/').replace('\\','/')
-IMG_DIR = os.path.join(BASE_DIR,'images/').replace('\\','/')
-DB_DIR = os.path.join(BASE_DIR,'db/').replace('\\','/')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__)).replace('\\','/')#to fix windows errors with os.path
+TEMPLATE_DIR = os.path.join(BASE_DIR,'templates/')
+STYLES_DIR = os.path.join(BASE_DIR,'styles/')
+JS_DIR = os.path.join(BASE_DIR,'js/')
+IMG_DIR = os.path.join(BASE_DIR,'images/')
+DB_DIR = os.path.join(BASE_DIR,'db/')
+ICON_FILE = "%sfavicon.ico" % BASE_DIR
 
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(TEMPLATE_DIR), autoescape=True)
 
@@ -45,22 +46,54 @@ class Buzz(object):
         return t.render(name = "Camerons")
 
     @cherrypy.expose
-    def observe(self):
+    def observe(self, **kws):
         db = lite.connect("%sBuzzLight.db" % DB_DIR)
         cur = db.cursor()
-        cur.execute("SELECT * FROM beelog")
+
+        if "add_entry" in kws:
+            name = kws['name']
+            date = kws['date']
+            hive = kws['hive']
+            notes = kws['notes']
+            weather = kws['weather']
+
+            cur.execute("INSERT INTO beelog (date_log,user,hive,notes,weather) "\
+                        "VALUES (?,?,?,?,?)", (date,name,hive,notes,weather) )
+            db.commit()
+
+
+        cur.execute("SELECT * FROM beelog ORDER BY date(date_log) DESC")
         data = cur.fetchall()
         db.close()
 
         #cherrypy.log.error(type(data).string)
+        current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 
         t = jinja_env.get_template('observe.html')
-        return t.render(entries=data)
+        return t.render(entries=data, now=current_date)
 
     @cherrypy.expose
-    def location(self):
+    def location(self, **kws):
+
+        db = lite.connect("%sBuzzLight.db" % DB_DIR)
+        cur = db.cursor()
+
+        if "add_location" in kws:
+            latti = kws['latt']
+            longi = kws['long']
+            hive = kws['hive']
+
+            cur.execute("INSERT INTO LOCATION (latt,long,hive) "\
+                        "VALUES (?,?,?)", (latti,longi,hive))
+            db.commit()
+
+        cur.execute("SELECT * FROM LOCATION")
+        data = cur.fetchall()
+
+        db.close()
+
         t = jinja_env.get_template('location.html')
-        return t.render(name = "Camerons")
+        return t.render(locations=data)
 
 cherrypy.config.update({
     'server.socket_host': '127.0.0.1',
@@ -92,6 +125,11 @@ config = {
         {
         'tools.staticdir.on': True,
         'tools.staticdir.dir': IMG_DIR
+        },
+    '/favicon.ico':
+        {
+        'tools.staticfile.on': True,
+        'tools.staticfile.filename': ICON_FILE
         }
 }
 

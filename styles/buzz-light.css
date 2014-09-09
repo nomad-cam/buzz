@@ -553,7 +553,7 @@ html body .ui-group-theme-c .ui-bar-inherit {
 	background-color: #ffcc33 /*{c-bar-background-color}*/;
 	border-color: #8c701c /*{c-bar-border}*/;
 	color: #000000 /*{c-bar-color}*/;
-	text-shadow: 0 /*{c-bar-shadow-x}*/ 1px /*{c-bar-shadow-y}*/ 0 /*{c-bar-shadow-radius}*/ #eeeeee /*{c-bar-shadow-color}*/;
+	text-shadow: 0 /*{c-bar-shadow-x}*/ 0px /*{c-bar-shadow-y}*/ 0 /*{c-bar-shadow-radius}*/ #eeeeee /*{c-bar-shadow-color}*/;
 	font-weight: bold;
 }
 .ui-bar-c {
@@ -567,7 +567,7 @@ html body .ui-group-theme-c .ui-bar-inherit {
 	background-color: #525252 /*{c-page-background-color}*/;
 	border-color: #525252 /*{c-page-border}*/;
 	color: #ffffff /*{c-page-color}*/;
-	text-shadow: 0 /*{c-page-shadow-x}*/ 1px /*{c-page-shadow-y}*/ 0 /*{c-page-shadow-radius}*/ #444444 /*{c-page-shadow-color}*/;
+	text-shadow: 0 /*{c-page-shadow-x}*/ 0px /*{c-page-shadow-y}*/ 0 /*{c-page-shadow-radius}*/ #444444 /*{c-page-shadow-color}*/;
 }
 /* Body: Read-only lists, text inputs, collapsible content */
 .ui-body-c,
@@ -579,7 +579,7 @@ html .ui-panel-page-container-c {
 	background-color: #fde396 /*{c-body-background-color}*/;
 	border-color: #8b7c52 /*{c-body-border}*/;
 	color: #000000 /*{c-body-color}*/;
-	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 0 /*{c-body-shadow-radius}*/ #eeeeee /*{c-body-shadow-color}*/;
+	text-shadow: 0 /*{c-body-shadow-x}*/ 0px /*{c-body-shadow-y}*/ 0 /*{c-body-shadow-radius}*/ #eeeeee /*{c-body-shadow-color}*/;
 }
 .ui-body-c {
 	border-width: 1px;
@@ -626,7 +626,7 @@ html head + body .ui-btn.ui-btn-c:visited {
 	background-color: #fef0c8 /*{c-bup-background-color}*/;
 	border-color: #8b846e /*{c-bup-border}*/;
 	color: #000000 /*{c-bup-color}*/;
-	text-shadow: 0 /*{c-bup-shadow-x}*/ 1px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #eeeeee /*{c-bup-shadow-color}*/;
+	text-shadow: 0 /*{c-bup-shadow-x}*/ 0px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #eeeeee /*{c-bup-shadow-color}*/;
 }
 /* Button hover */
 .ui-page-theme-c .ui-btn:hover,
