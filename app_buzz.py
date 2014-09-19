@@ -67,7 +67,7 @@ class Buzz(object):
         db.close()
 
         #cherrypy.log.error(type(data).string)
-        current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+        current_date = datetime.datetime.now().strftime("%Y/%m/%d")
 
         t = jinja_env.get_template('observe.html')
         return t.render(entries=data, now=current_date)

@@ -47,6 +47,8 @@
 
         {% endfor %}
 
+        alert(Object.prototype.toString.call(toBound));
+
         var bounds = new L.LatLngBounds(toBound)
         var map = L.map('map').fitBounds(bounds);
 

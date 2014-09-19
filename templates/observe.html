@@ -31,6 +31,10 @@
             <textarea cols="40" rows="8" name='notes' id='notes' data-clear-btn="true"></textarea>
         </div>
         <div data-role="fieldcontain">
+            <label for="honey">Honey Yield:</label>
+            <input type="text" data-inline="true" name='honey' id='honey' value="">
+        </div>
+        <div data-role="fieldcontain">
             <label for="weather">Weather:</label>
             <input type="text" data-inline="true" name='weather' id='weather' value="">
         </div>
@@ -40,12 +44,28 @@
     </form>
 </div>
 
+
+
+<div class="ui-field-contain">  
+  
+    <select name="select-custom-1" id="select-custom-1" data-native-menu="true">
+        <option>Filter results by Hive Name</option>
+        <option value="1">All</option>
+        {% for hive in hives %}
+        
+        {% endfor %}
+    </select>
+
+</div>
+
+
+
 {% if entries %}
 {% for report in entries -%}
 {% if loop.first %}
 <div>Last Observations
 <div data-role="collapsible" data-collapsed="false" data-collapsed-icon="calendar" data-expanded-icon="calendar">
-    <h3><div>{{ report[1] }}</div><div style="float:right; margin-top:-22px;">{{ report[0] }}</div></h3>
+    <h3><div>{{ report[0] }}</div><div style="float:right; margin-top:-22px;">{{ report[1] }}</div></h3>
     <p>Hives: {{ report[2] }}</p>
     <p>Notes: {{ report[3] }}</p>
     <p>Weather: {{ report[4] }}</p>
@@ -54,7 +74,7 @@
 <div>Older Observations
 {% else %}
 <div data-role="collapsible" data-collapsed-icon="calendar" data-expanded-icon="calendar">
-    <h3><div>{{ report[1] }}</div><div style="float:right; margin-top:-22px;">{{ report[0] }}</div></h3>
+    <h3><div>{{ report[0] }}</div><div style="float:right; margin-top:-22px;">{{ report[1] }}</div></h3>
     <p>Hives: {{ report[2] }}</p>
     <p>Notes: {{ report[3] }}</p>
     <p>Weather: {{ report[4] }} </p>
