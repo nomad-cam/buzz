@@ -15,28 +15,28 @@
     <h3>Add New Entry</h3>
     <form action="/observe" method="post">
         <div data-role="fieldcontain">
-            <label for="name">Name:</label>
-            <input type="text" data-inline="true" name='name' id='name' value="" data-clear-btn="true">
+            <label for="name" class="ui-hidden-accessible">Name:</label>
+            <input type="text" data-inline="true" name='name' id='name' placeholder="Name" value="" data-clear-btn="true">
         </div>
         <div data-role="fieldcontain">
-            <label for="date">Date:</label>
-            <input type="text" data-inline="true" name='date' id='date' value="{{ now }}" data-clear-btn="true">
+            <label for="date" class="ui-hidden-accessible">Date:</label>
+            <input type="text" data-inline="true" name='date' id='date' placeholder="Date" value="{{ now }}" data-clear-btn="true">
         </div>
         <div data-role="fieldcontain">
-            <label for="hive">Hive:</label>
-            <input type="text" data-inline="true" name='hive' id='hive' value="" data-clear-btn="true">
+            <label for="hive" class="ui-hidden-accessible">Hive:</label>
+            <input type="text" data-inline="true" name='hive' id='hive' placeholder="Hive Reference" value="" data-clear-btn="true">
         </div>
         <div data-role="fieldcontain">
-            <label for="notes">Notes:</label>
-            <textarea cols="40" rows="8" name='notes' id='notes' data-clear-btn="true"></textarea>
+            <label for="notes" class="ui-hidden-accessible">Notes:</label>
+            <textarea cols="40" rows="8" name='notes' id='notes' placeholder="Notes" data-clear-btn="true"></textarea>
         </div>
         <div data-role="fieldcontain">
-            <label for="honey">Honey Yield:</label>
-            <input type="text" data-inline="true" name='honey' id='honey' value="">
+            <label for="honey" class="ui-hidden-accessible">Honey Yield:</label>
+            <input type="text" data-inline="true" name='honey' id='honey' placeholder="Honey Yield" value="" data-clear-btn="true">
         </div>
         <div data-role="fieldcontain">
-            <label for="weather">Weather:</label>
-            <input type="text" data-inline="true" name='weather' id='weather' value="">
+            <label for="weather" class="ui-hidden-accessible">Weather:</label>
+            <input type="text" data-inline="true" name='weather' id='weather' placeholder="Weather Notes" value="" data-clear-btn="true">
         </div>
         <div data-role="fieldcontain">
             <input type="submit" data-inline="true" value="Add Entry" name="add_entry">
@@ -65,7 +65,11 @@
 {% if loop.first %}
 <div>Last Observations
 <div data-role="collapsible" data-collapsed="false" data-collapsed-icon="calendar" data-expanded-icon="calendar">
-    <h3><div>{{ report[0] }}</div><div style="float:right; margin-top:-22px;">{{ report[1] }}</div></h3>
+    <h1>
+        <div class="auth">{{ report[1] }}</div>
+        <div class="count">{{ report[0] }}</div>
+        <div class="description"></div>
+    </h1>
     <p>Hives: {{ report[2] }}</p>
     <p>Notes: {{ report[3] }}</p>
     <p>Weather: {{ report[4] }}</p>
@@ -74,7 +78,11 @@
 <div>Older Observations
 {% else %}
 <div data-role="collapsible" data-collapsed-icon="calendar" data-expanded-icon="calendar">
-    <h3><div>{{ report[0] }}</div><div style="float:right; margin-top:-22px;">{{ report[1] }}</div></h3>
+    <h3>
+        <div class="auth">{{ report[1] }}</div>
+        <div class="count">{{ report[0] }}</div>
+        <div class="description"></div>
+    </h3>
     <p>Hives: {{ report[2] }}</p>
     <p>Notes: {{ report[3] }}</p>
     <p>Weather: {{ report[4] }} </p>

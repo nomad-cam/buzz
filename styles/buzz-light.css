@@ -747,3 +747,36 @@ button[disabled],
 
 /* Cams Extras 
 -----------------------------------------------------------------------------------------------------------*/
+
+/* http://jsfiddle.net/Shreerang/66gML/ */
+.auth {
+    float: right;
+    max-width: 40%;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 14px !important;
+    text-align: right;
+}
+
+.count{
+    float: left;
+    border: solid 1px grey;
+    border-radius: 10px;
+    padding: 2px;
+    background-color: #FFFFFF;
+    font-size: 12px !important;
+}
+
+.description{
+    font-weight: normal !important;
+    font-size: 13px !important;
+    line-height: 20px;
+    float: left;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    text-align: left;
+    padding-left: 10px;
+}

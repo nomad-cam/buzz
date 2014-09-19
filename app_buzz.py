@@ -16,7 +16,7 @@ STYLES_DIR = os.path.join(BASE_DIR,'styles/')
 JS_DIR = os.path.join(BASE_DIR,'js/')
 IMG_DIR = os.path.join(BASE_DIR,'images/')
 DB_DIR = os.path.join(BASE_DIR,'db/')
-ICON_FILE = "%sfavicon.ico" % BASE_DIR
+ICON_FILE = "%s/favicon.ico" % BASE_DIR
 
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(TEMPLATE_DIR), autoescape=True)
 
