@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block header %}
+
 <h1>Your Hives</h1>
 <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 <a href="config" data-icon="gear" data-iconpos="notext">Configure</a>
@@ -15,7 +16,7 @@
     <h3>Add New Hive</h3>
     <form action="/observe" method="post">
         <div data-role="fieldcontain">
-            <label for="name">Name:</label>
+            <label for="name">Identification:</label>
             <input type="text" data-inline="true" name='name' id='name' value="" data-clear-btn="true">
         </div>
         <div data-role="fieldcontain">
@@ -39,5 +40,36 @@
         </div>
     </form>
 </div>
+<div class="hive-display">
+    <svg id="svg-hive" width="100%" height="400px"></svg>
+
+    <script>
+        var paper = Snap("#svg-hive");
+        Snap.load("/images/full-box.svg",onDrawingLoaded);
+
+        function onDrawingLoaded(data){
+
+            var mainBox=data.select("#main-box");
+
+
+            var boxColour=data.select("#box-colour");
+            /*boxColour.attr( {
+                fill:"#ff0000",
+                stroke:"#0000ff",
+                strokeWidth:1
+            });*/
+
+
+
+            var t = new Snap.Matrix().scale(0.07).translate(-98000,-13000);
+            mainBox.transform(t);
+
+            paper.append(data);
+        }
+    </script>
+
+</div>
+
+
 {% endblock %}
 
