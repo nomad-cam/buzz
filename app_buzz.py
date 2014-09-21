@@ -34,7 +34,12 @@ class Buzz(object):
         cherrypy.log.error(BASE_DIR)
         t = jinja_env.get_template('index.html')
         return t.render(name = "Camerons")
-    
+
+    @cherrypy.expose
+    def svg(self):
+        t = jinja_env.get_template('test_svg.html')
+        return t.render()
+
     @cherrypy.expose
     def config(self):
         t = jinja_env.get_template('config.html')

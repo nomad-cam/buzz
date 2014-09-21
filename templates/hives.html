@@ -40,12 +40,26 @@
         </div>
     </form>
 </div>
-<div class="hive-display">
-    <svg id="svg-hive" width="100%" height="400px"></svg>
-
+<div class="ui-corner-all custom-corners">
+    <div class="ui-bar ui-bar-c">
+        <h3>Current Hive</h3>
+    </div>
+    <div class="ui-body ui-body-c">
+        <svg id="svg-hive" width="100%" height="800"></svg>
+    </div>
     <script>
         var paper = Snap("#svg-hive");
+
+        Snap.load("/images/base-board.svg",onDrawingLoadedBase);
         Snap.load("/images/full-box.svg",onDrawingLoaded);
+
+        function onDrawingLoadedBase(data){
+
+            var baseBoard = data.select("#base-board");
+            var t = new Snap.Matrix().scale(0.15,0.15,-7498,2336.5).translate(0,1200);
+            baseBoard.transform(t);
+            paper.append(data);
+        }
 
         function onDrawingLoaded(data){
 
@@ -53,15 +67,15 @@
 
 
             var boxColour=data.select("#box-colour");
-            /*boxColour.attr( {
-                fill:"#ff0000",
-                stroke:"#0000ff",
-                strokeWidth:1
-            });*/
+            boxColour.attr( {
+                fill:"#ffee88",
+                strokeWidth:10
+            });
 
 
 
-            var t = new Snap.Matrix().scale(0.07).translate(-98000,-13000);
+            /*var t = new Snap.Matrix().scale(0.07).translate(-98000,-13000);*/
+            var t = new Snap.Matrix().scale(0.15,0.15,-7500,-1000);
             mainBox.transform(t);
 
             paper.append(data);
