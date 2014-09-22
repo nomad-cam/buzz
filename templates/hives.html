@@ -45,37 +45,56 @@
         <h3>Current Hive</h3>
     </div>
     <div class="ui-body ui-body-c">
-        <svg id="svg-hive" width="100%" height="800"></svg>
+        <svg id="svg-hive" width="100%" height="1200"></svg>
     </div>
     <script>
         var paper = Snap("#svg-hive");
 
         Snap.load("/images/base-board.svg",onDrawingLoadedBase);
         Snap.load("/images/full-box.svg",onDrawingLoaded);
+        Snap.load("/images/full-box.svg",onDrawingLoaded2);
+        Snap.load("/images/top-board.svg",onDrawingLoadedTop);
 
         function onDrawingLoadedBase(data){
 
             var baseBoard = data.select("#base-board");
-            var t = new Snap.Matrix().scale(0.15,0.15,-7498,2336.5).translate(0,1200);
+            var t = new Snap.Matrix().scale(0.15,0.15,-7498,2336.5).translate(0,2900);
             baseBoard.transform(t);
+            paper.append(data);
+        }
+
+        function onDrawingLoadedTop(data){
+
+            var topBoard = data.select("#top-board");
+            var t = new Snap.Matrix().scale(0.15,0.15,-3955,2336.5).translate(0,0);
+            topBoard.transform(t);
             paper.append(data);
         }
 
         function onDrawingLoaded(data){
 
             var mainBox=data.select("#main-box");
-
-
             var boxColour=data.select("#box-colour");
             boxColour.attr( {
                 fill:"#ffee88",
                 strokeWidth:10
             });
-
-
-
             /*var t = new Snap.Matrix().scale(0.07).translate(-98000,-13000);*/
-            var t = new Snap.Matrix().scale(0.15,0.15,-7500,-1000);
+            var t = new Snap.Matrix().scale(0.15,0.15,-7500,-1000).translate(0,500);
+            mainBox.transform(t);
+
+            paper.append(data);
+        }
+        function onDrawingLoaded2(data){
+
+            var mainBox=data.select("#main-box");
+            var boxColour=data.select("#box-colour");
+            boxColour.attr( {
+                /*fill:"#ffee88",*/
+                strokeWidth:10
+            });
+            /*var t = new Snap.Matrix().scale(0.07).translate(-98000,-13000);*/
+            var t = new Snap.Matrix().scale(0.15,0.15,-7500,-1000).translate(0,1700);
             mainBox.transform(t);
 
             paper.append(data);
