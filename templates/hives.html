@@ -51,8 +51,8 @@
         var paper = Snap("#svg-hive");
 
         Snap.load("/images/base-board.svg",onDrawingLoadedBase);
-        Snap.load("/images/full-box.svg",onDrawingLoaded);
         Snap.load("/images/full-box.svg",onDrawingLoaded2);
+        Snap.load("/images/full-box.svg",onDrawingLoaded);
         Snap.load("/images/top-board.svg",onDrawingLoadedTop);
 
         function onDrawingLoadedBase(data){
@@ -64,10 +64,12 @@
         }
 
         function onDrawingLoadedTop(data){
-
+            var hiveName = data.select("#hive-name");
+            var topBoardAll = data.select("#top-board-all");
             var topBoard = data.select("#top-board");
             var t = new Snap.Matrix().scale(0.15,0.15,-3955,2336.5).translate(0,0);
             topBoard.transform(t);
+            topBoard.text(0,0,"A1");
             paper.append(data);
         }
 
