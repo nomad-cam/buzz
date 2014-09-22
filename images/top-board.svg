@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2805.6948"
+   height="1797.3228"
+   id="svg8537"
+   version="1.1"
+   inkscape:version="0.91pre2 r13516"
+   viewBox="0 0 2805.6948 1797.3228"
+   sodipodi:docname="top-board.svg">
+  <defs
+     id="defs8539">
+    <marker
+       orient="auto"
+       id="DistanceX"
+       style="overflow:visible"
+       refX="0"
+       refY="0">
+      <path
+         id="path8552"
+         d="M 3,-3 -3,3 M 0,-5 0,5"
+         style="stroke:#000000;stroke-width:0.5"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <pattern
+       id="Hatch"
+       x="0"
+       y="0"
+       patternUnits="userSpaceOnUse"
+       width="8"
+       height="8">
+      <path
+         id="path8555"
+         d="M8 4 l-4,4"
+         stroke-width="0.25"
+         stroke="#000000"
+         linecap="square" />
+      <path
+         id="path8557"
+         d="M6 2 l-4,4"
+         stroke-width="0.25"
+         stroke="#000000"
+         linecap="square" />
+      <path
+         id="path8559"
+         d="M4 0 l-4,4"
+         stroke-width="0.25"
+         stroke="#000000"
+         linecap="square" />
+    </pattern>
+    <symbol
+       id="$MODEL_SPACE" />
+    <symbol
+       id="$PAPER_SPACE" />
+    <symbol
+       id="*U2">
+      <text
+         id="text8564"
+         sodipodi:linespacing="125%"
+         style="font-size:106.30000305px;line-height:125%;font-family:Arial;fill:#000000"
+         x="922.70197"
+         y="2168.8694">
+        <tspan
+           id="tspan8566"
+           sodipodi:role="line"
+           x="922.70197"
+           y="2168.8694">Full Frame</tspan>
+      </text>
+    </symbol>
+    <symbol
+       id="*U3">
+      <text
+         id="text8569"
+         sodipodi:linespacing="125%"
+         style="font-size:106.30000305px;line-height:125%;font-family:Arial;fill:#000000"
+         x="4464.3413"
+         y="2168.8694">
+        <tspan
+           id="tspan8571"
+           sodipodi:role="line"
+           x="4464.3413"
+           y="2168.8694">Ideal Frame</tspan>
+      </text>
+    </symbol>
+    <symbol
+       id="*U4">
+      <text
+         id="text8574"
+         sodipodi:linespacing="125%"
+         style="font-size:106.30000305px;line-height:125%;font-family:Arial;fill:#000000"
+         x="8009.606"
+         y="2170.6821">
+        <tspan
+           id="tspan8576"
+           sodipodi:role="line"
+           x="8009.606"
+           y="2170.6821">Half Frame</tspan>
+      </text>
+    </symbol>
+    <symbol
+       id="*U5">
+      <text
+         id="text8579"
+         sodipodi:linespacing="125%"
+         style="font-size:106.30000305px;line-height:125%;font-family:Arial;fill:#000000"
+         x="11562.992"
+         y="2170.6821">
+        <tspan
+           id="tspan8581"
+           sodipodi:role="line"
+           x="11562.992"
+           y="2170.6821">WSP Frame</tspan>
+      </text>
+    </symbol>
+    <symbol
+       id="*U6">
+      <text
+         id="text8584"
+         sodipodi:linespacing="125%"
+         style="font-size:106.30000305px;line-height:125%;font-family:Arial;fill:#000000"
+         x="15097.091"
+         y="2168.8694">
+        <tspan
+           id="tspan8586"
+           sodipodi:role="line"
+           x="15097.091"
+           y="2168.8694">Manley Frame</tspan>
+      </text>
+    </symbol>
+    <symbol
+       id="*U7">
+      <text
+         id="text8589"
+         sodipodi:linespacing="125%"
+         style="font-size:106.30000305px;line-height:125%;font-family:Arial;fill:#000000"
+         x="924.00714"
+         y="4649.1841">
+        <tspan
+           id="tspan8591"
+           sodipodi:role="line"
+           x="924.00714"
+           y="4649.1841">Base</tspan>
+      </text>
+    </symbol>
+    <symbol
+       id="*U8">
+      <text
+         id="text8594"
+         sodipodi:linespacing="125%"
+         style="font-size:106.30000305px;line-height:125%;font-family:Arial;fill:#000000"
+         x="4474.7104"
+         y="4650.9971">
+        <tspan
+           id="tspan8596"
+           sodipodi:role="line"
+           x="4474.7104"
+           y="4650.9971">Top Cover</tspan>
+      </text>
+    </symbol>
+    <symbol
+       id="*U9">
+      <text
+         id="text8599"
+         sodipodi:linespacing="125%"
+         style="font-size:106.30000305px;line-height:125%;font-family:Arial;fill:#000000"
+         x="7437.1055"
+         y="4650.9971">
+        <tspan
+           id="tspan8601"
+           sodipodi:role="line"
+           x="7437.1055"
+           y="4650.9971">Inner Cover/Excluder/Escape</tspan>
+      </text>
+    </symbol>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.12374369"
+     inkscape:cx="1575.7811"
+     inkscape:cy="1221.021"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="832"
+     inkscape:window-height="1107"
+     inkscape:window-x="90"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata8542">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(3963.2971,-2297.8788)">
+    <g
+       id="top-board">
+      <path
+         id="top-board-colour"
+         d="m -3962.7972,3375.4771 0,-177.1653 1558.8457,-900 1245.8492,719.2913 0,177.1654 -1558.8458,900 z"
+         style="fill:#80b3ff;stroke:#000000;stroke-width:5.00000013;stroke-miterlimit:4;stroke-dasharray:none"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         id="path10019"
+         d="m -1158.1916,3017.6031 -1558.7565,900"
+         style="fill:none;stroke:#000000;stroke-width:5.00000013;stroke-miterlimit:4;stroke-dasharray:none"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+      <path
+         id="path10029"
+         d="m -2716.9481,4094.6345 0,-177.0314"
+         style="fill:none;stroke:#000000;stroke-width:5.00000013;stroke-miterlimit:4;stroke-dasharray:none"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+      <path
+         id="path10031"
+         d="m -3962.7079,3198.3118 1245.7598,719.2913"
+         style="fill:none;stroke:#000000;stroke-width:5.00000013;stroke-miterlimit:4;stroke-dasharray:none"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+      <path
+         id="path10033"
+         d="m -2775.2514,3883.9417 0,177.1653"
+         style="fill:none;stroke:#000000"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path10035"
+         d="m -3904.4939,3231.9732 0,177.1653"
+         style="fill:none;stroke:#000000"
+         inkscape:connector-curvature="0" />
+      <flowRoot
+         xml:space="preserve"
+         id="rego-name"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="matrix(0.8530764,0.50739322,-1.0110667,0.57086513,-3269.2579,1649.3491)"><flowRegion
+           id="flowRegion6238"><rect
+             id="rect6240"
+             width="476.79224"
+             height="206.07121"
+             x="2052.6299"
+             y="1433.6678"
+             ry="0" /></flowRegion><flowPara
+           id="flowPara6242"
+           style="font-size:180px;text-align:center;text-anchor:middle">R269</flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="hive-name"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="matrix(0.8660254,0.5,-0.99999767,0.57735161,-4438.7584,2623.2318)"><flowRegion
+           id="flowRegion6246"><rect
+             id="rect6248"
+             width="662.66003"
+             height="573.7666"
+             x="1236.4266"
+             y="-909.88599" /></flowRegion><flowPara
+           id="flowPara6250"
+           style="font-size:500px;text-align:center;text-anchor:middle">A1</flowPara></flowRoot>    </g>
+  </g>
+</svg>
